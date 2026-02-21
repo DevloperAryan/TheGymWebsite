@@ -1,8 +1,7 @@
 <div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
 
-# TheGym — AI-Powered Gym Website
+
+# TheGym —Health planet Gym Website
 
 A modern gym website built with React + Vite, featuring programs/classes pages, gallery, contact flow, and an AI Trainer that can generate structured workout + meal plans.
 
@@ -10,7 +9,6 @@ A modern gym website built with React + Vite, featuring programs/classes pages, 
 
 ## Features
 
-- **AI Trainer:** Generates a personalized plan (workout + diet) and displays it in a clean, structured UI.
 - **Programs & Classes:** Browse training programs and class details.
 - **Find a Gym:** Location/branch page for helping users find nearby gyms.
 - **Gallery:** Media showcase (photos/videos).
@@ -59,7 +57,7 @@ npm run preview
 
 ## Project Structure
 
-- `components/` — reusable UI components (Navbar, Hero, Programs, AI Trainer, etc.)
+- `components/` — reusable UI components (Navbar, Hero, Programs, , etc.)
 - `pages/` — route-level pages (Home, Classes, FindGym, Gallery, Contact, etc.)
 - `services/` — AI/network services
 - `assets/` — images and media
