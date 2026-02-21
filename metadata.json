@@ -1,0 +1,9 @@
+
+{
+  "name": "The Indian Gym",
+  "description": "A premium, AI-powered fitness application designed for the modern warrior, blending traditional Indian strength with contemporary science.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rubik+Wet+Paint&display=swap');
+@import 'tailwindcss';
+
+
+.font-bebas {
+  font-family: 'Bebas Neue', cursive;
+}
+
+.font-rubix {
+  font-family: "Rubik Wet Paint", system-ui;
+}
+
+.font-akaya {
+  font-family: "Akaya Kanadaka", system-ui;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  overflow-x: hidden;
+}
+
+
+/* Horizontal scrollbar height */
+.scrollbar-x-sm::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-x-sm::-webkit-scrollbar-track {
+  background: rgba(58, 58, 63, 0.6);
+}
+
+.scrollbar-x-sm::-webkit-scrollbar-thumb {
+  background: #f97316;
+  border-radius: 4px;
+}
+.scrollbar-x-sm::-webkit-scrollbar-thumb:hover {
+        background: #333;
+      }
+
+      /* can be: auto | thin | none */
+.scrollbar-x-sm {
+  scrollbar-width: auto;
+  scrollbar-color: rgba(249, 115, 22, 0.7) rgba(39, 39, 42, 0.6);
+}
