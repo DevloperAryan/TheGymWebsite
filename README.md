@@ -2,19 +2,82 @@
 <img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
 </div>
 
-# Run and deploy your AI Studio app
+# TheGym — AI-Powered Gym Website
 
-This contains everything you need to run your app locally.
+A modern gym website built with React + Vite, featuring programs/classes pages, gallery, contact flow, and an AI Trainer that can generate structured workout + meal plans.
 
-View your app in AI Studio: https://ai.studio/apps/temp/1
+---
 
-## Run Locally
+## Features
 
-**Prerequisites:**  Node.js
+- **AI Trainer:** Generates a personalized plan (workout + diet) and displays it in a clean, structured UI.
+- **Programs & Classes:** Browse training programs and class details.
+- **Find a Gym:** Location/branch page for helping users find nearby gyms.
+- **Gallery:** Media showcase (photos/videos).
+- **Legal pages:** Terms and Privacy pages included.
 
+---
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Tech Stack
+
+- **Frontend:** React + TypeScript
+- **Build Tooling:** Vite
+- **Styling:** Tailwind CSS
+- **Routing:** `react-router
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (LTS recommended)
+
+### Install
+
+```bash
+npm install
+```
+
+### Run (Development)
+
+```bash
+npm run dev
+```
+
+---
+
+## Scripts
+
+```bash
+npm run dev
+npm run build
+npm run preview
+```
+
+---
+
+## Project Structure
+
+- `components/` — reusable UI components (Navbar, Hero, Programs, AI Trainer, etc.)
+- `pages/` — route-level pages (Home, Classes, FindGym, Gallery, Contact, etc.)
+- `services/` — AI/network services
+- `assets/` — images and media
+- `types.ts` — shared TypeScript types
+
+---
+
+## Personal Details 
+
+- **Name:** Aryan Kumar
+- **Role:** Frontend web developer
+- **Portfolio:** https://aboutaryan.netlify.app
+- **LinkedIn:** https://www.linkedin.com/in/aryanwebdev/
+- **Email:** aryankumar.linux@gmail.com
+
+---
+
+## Call to Action (CTA)
+ “Want a similar website for your gym or brand? Email me at aryankumar.linux@gmail.com.”
+
+---
