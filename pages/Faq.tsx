@@ -263,7 +263,7 @@ const Faq: React.FC = () => {
               <div className="bg-black border border-zinc-800 rounded-3xl overflow-hidden">
                 <Link to="/gallery">
                   <div className="h-44 w-full flex items-center justify-center">
-                    <div className="text-center px-6">
+                    <div className="text-center px-0 sm:px-6">
                       <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-orange-500/10 border border-orange-500/20 mb-3">
                         <Video className="w-6 h-6 text-orange-500" />
                       </div>

@@ -1,6 +1,6 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useMemo, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   Activity,
   Clock,
@@ -9,22 +9,22 @@ import {
   X,
   ArrowUpRight,
   Sparkles,
-} from 'lucide-react';
+} from "lucide-react";
 
-import aerobicsImg from '@/assets/aerobics.avif';
-import bhangraImg from '@/assets/bhangra.webp';
-import cardioFitnessImg from '@/assets/cardioFitness.avif';
-import cardioKickboxingImg from '@/assets/cardioKickboxing.jpg';
-import circuitTrainingImg from '@/assets/circuitTraining.jpg';
-import freeWeightFloorImg from '@/assets/freeWeightFloor.webp';
-import gymFitnessImg from '@/assets/gymFitness.jpg';
-import indoorCyclingImg from '@/assets/indoorCycling.webp';
-import outdoorTrainingImg from '@/assets/outdoorTraining.avif';
-import powerYogaImg from '@/assets/powerYoga.webp';
-import strengthTrainingImg from '@/assets/strengthTraining.avif';
-import zumbaImg from '@/assets/zumba.avif';
+import aerobicsImg from "@/assets/aerobics.avif";
+import bhangraImg from "@/assets/bhangra.webp";
+import cardioFitnessImg from "@/assets/cardioFitness.avif";
+import cardioKickboxingImg from "@/assets/cardioKickboxing.jpg";
+import circuitTrainingImg from "@/assets/circuitTraining.jpg";
+import freeWeightFloorImg from "@/assets/freeWeightFloor.webp";
+import gymFitnessImg from "@/assets/gymFitness.jpg";
+import indoorCyclingImg from "@/assets/indoorCycling.webp";
+import outdoorTrainingImg from "@/assets/outdoorTraining.avif";
+import powerYogaImg from "@/assets/powerYoga.webp";
+import strengthTrainingImg from "@/assets/strengthTraining.avif";
+import zumbaImg from "@/assets/zumba.avif";
 
-type Intensity = 'Low' | 'Medium' | 'High' | 'Extreme';
+type Intensity = "Low" | "Medium" | "High" | "Extreme";
 
 interface GymClass {
   id: string;
@@ -34,134 +34,134 @@ interface GymClass {
   duration: string;
   image: string;
   category:
-    | 'Strength'
-    | 'Cardio'
-    | 'Mind & Body'
-    | 'Dance'
-    | 'Outdoor'
-    | 'Open Gym';
+    | "Strength"
+    | "Cardio"
+    | "Mind & Body"
+    | "Dance"
+    | "Outdoor"
+    | "Open Gym";
 }
 
 const GYM_CLASSES: GymClass[] = [
   {
-    id: 'gym-fitness',
-    title: 'Gym Fitness',
+    id: "gym-fitness",
+    title: "Gym Fitness",
     description:
-      'A complete fitness session using modern equipment to build strength, stamina, and confidence. Great for beginners and regulars.',
-    intensity: 'Medium',
-    duration: '60 min',
+      "A complete fitness session using modern equipment to build strength, stamina, and confidence. Great for beginners and regulars.",
+    intensity: "Medium",
+    duration: "60 min",
     image: gymFitnessImg,
-    category: 'Strength',
+    category: "Strength",
   },
   {
-    id: 'indoor-cycling',
-    title: 'Indoor Cycling',
+    id: "indoor-cycling",
+    title: "Indoor Cycling",
     description:
-      'Intervals + endurance on the bike. Ride to the beat, sweat hard, and leave stronger every session.',
-    intensity: 'High',
-    duration: '45 min',
+      "Intervals + endurance on the bike. Ride to the beat, sweat hard, and leave stronger every session.",
+    intensity: "High",
+    duration: "45 min",
     image: indoorCyclingImg,
-    category: 'Cardio',
+    category: "Cardio",
   },
   {
-    id: 'power-yoga',
-    title: 'Power Yoga',
+    id: "power-yoga",
+    title: "Power Yoga",
     description:
-      'A stronger flow with breath + control. Improve mobility, balance, and resilience while reducing stress.',
-    intensity: 'Medium',
-    duration: '60 min',
+      "A stronger flow with breath + control. Improve mobility, balance, and resilience while reducing stress.",
+    intensity: "Medium",
+    duration: "60 min",
     image: powerYogaImg,
-    category: 'Mind & Body',
+    category: "Mind & Body",
   },
   {
-    id: 'cardio-fitness',
-    title: 'Cardio Fitness',
+    id: "cardio-fitness",
+    title: "Cardio Fitness",
     description:
-      'Heart-pumping circuits designed to improve conditioning and burn calories through dynamic full-body movement.',
-    intensity: 'High',
-    duration: '45 min',
+      "Heart-pumping circuits designed to improve conditioning and burn calories through dynamic full-body movement.",
+    intensity: "High",
+    duration: "45 min",
     image: cardioFitnessImg,
-    category: 'Cardio',
+    category: "Cardio",
   },
   {
-    id: 'cardio-kickboxing',
-    title: 'Cardio Kickboxing',
+    id: "cardio-kickboxing",
+    title: "Cardio Kickboxing",
     description:
-      'Fast-paced combos for power + coordination. Punch, kick, sweat—perfect for a serious cardio hit.',
-    intensity: 'High',
-    duration: '50 min',
+      "Fast-paced combos for power + coordination. Punch, kick, sweat—perfect for a serious cardio hit.",
+    intensity: "High",
+    duration: "50 min",
     image: cardioKickboxingImg,
-    category: 'Cardio',
+    category: "Cardio",
   },
   {
-    id: 'aerobics-classes',
-    title: 'Aerobics',
+    id: "aerobics-classes",
+    title: "Aerobics",
     description:
-      'Rhythmic routines that improve overall fitness—endurance, mobility, and strength in one fun session.',
-    intensity: 'Medium',
-    duration: '55 min',
+      "Rhythmic routines that improve overall fitness—endurance, mobility, and strength in one fun session.",
+    intensity: "Medium",
+    duration: "55 min",
     image: aerobicsImg,
-    category: 'Cardio',
+    category: "Cardio",
   },
   {
-    id: 'circuit-training',
-    title: 'Circuit Training',
+    id: "circuit-training",
+    title: "Circuit Training",
     description:
-      'Move through stations targeting different muscle groups with minimal rest. Efficient, intense, and addictive.',
-    intensity: 'High',
-    duration: '45 min',
+      "Move through stations targeting different muscle groups with minimal rest. Efficient, intense, and addictive.",
+    intensity: "High",
+    duration: "45 min",
     image: circuitTrainingImg,
-    category: 'Strength',
+    category: "Strength",
   },
   {
-    id: 'zumba',
-    title: 'Zumba',
+    id: "zumba",
+    title: "Zumba",
     description:
-      'Dance-party energy with real fitness results. Great vibes, big sweat, and a killer calorie burn.',
-    intensity: 'Medium',
-    duration: '60 min',
+      "Dance-party energy with real fitness results. Great vibes, big sweat, and a killer calorie burn.",
+    intensity: "Medium",
+    duration: "60 min",
     image: zumbaImg,
-    category: 'Dance',
+    category: "Dance",
   },
   {
-    id: 'strength-classes',
-    title: 'Strength',
+    id: "strength-classes",
+    title: "Strength",
     description:
-      'Build lean muscle using free weights, bands, and bodyweight patterns. Form-first, progress always.',
-    intensity: 'High',
-    duration: '60 min',
+      "Build lean muscle using free weights, bands, and bodyweight patterns. Form-first, progress always.",
+    intensity: "High",
+    duration: "60 min",
     image: strengthTrainingImg,
-    category: 'Strength',
+    category: "Strength",
   },
   {
-    id: 'outdoor-training',
-    title: 'Outdoor Training',
+    id: "outdoor-training",
+    title: "Outdoor Training",
     description:
-      'Bootcamp-style sessions outdoors: functional drills, running, and team energy in fresh air.',
-    intensity: 'High',
-    duration: '60 min',
+      "Bootcamp-style sessions outdoors: functional drills, running, and team energy in fresh air.",
+    intensity: "High",
+    duration: "60 min",
     image: outdoorTrainingImg,
-    category: 'Outdoor',
+    category: "Outdoor",
   },
   {
-    id: 'free-weights-floor',
-    title: 'Free Weights Floor',
+    id: "free-weights-floor",
+    title: "Free Weights Floor",
     description:
-      'Train classic lifts like squats and deadlifts in our dedicated free weights area. Serious strength zone.',
-    intensity: 'Extreme',
-    duration: 'Open',
+      "Train classic lifts like squats and deadlifts in our dedicated free weights area. Serious strength zone.",
+    intensity: "Extreme",
+    duration: "Open",
     image: freeWeightFloorImg,
-    category: 'Open Gym',
+    category: "Open Gym",
   },
   {
-    id: 'bhangra',
-    title: 'Bhangra',
+    id: "bhangra",
+    title: "Bhangra",
     description:
-      'High-energy Punjabi dance cardio. Fun, cultural, and surprisingly intense—expect to sweat.',
-    intensity: 'High',
-    duration: '50 min',
+      "High-energy Punjabi dance cardio. Fun, cultural, and surprisingly intense—expect to sweat.",
+    intensity: "High",
+    duration: "50 min",
     image: bhangraImg,
-    category: 'Dance',
+    category: "Dance",
   },
 ];
 
@@ -170,44 +170,44 @@ const INTENSITY_STYLES: Record<
   { label: string; classes: string; dot: string }
 > = {
   Low: {
-    label: 'Low',
-    classes: 'border-emerald-500/20 bg-emerald-500/10 text-emerald-300',
-    dot: 'bg-emerald-400',
+    label: "Low",
+    classes: "border-emerald-500/20 bg-emerald-500/10 text-emerald-300",
+    dot: "bg-emerald-400",
   },
   Medium: {
-    label: 'Medium',
-    classes: 'border-sky-500/20 bg-sky-500/10 text-sky-300',
-    dot: 'bg-sky-400',
+    label: "Medium",
+    classes: "border-sky-500/20 bg-sky-500/10 text-sky-300",
+    dot: "bg-sky-400",
   },
   High: {
-    label: 'High',
-    classes: 'border-orange-500/20 bg-orange-500/10 text-orange-300',
-    dot: 'bg-orange-400',
+    label: "High",
+    classes: "border-orange-500/20 bg-orange-500/10 text-orange-300",
+    dot: "bg-orange-400",
   },
   Extreme: {
-    label: 'Extreme',
-    classes: 'border-red-500/20 bg-red-500/10 text-red-300',
-    dot: 'bg-red-400',
+    label: "Extreme",
+    classes: "border-red-500/20 bg-red-500/10 text-red-300",
+    dot: "bg-red-400",
   },
 };
 
-const CATEGORY_STYLES: Record<GymClass['category'], string> = {
-  Strength: 'border-white/10 bg-zinc-900/50 text-zinc-200',
-  Cardio: 'border-white/10 bg-zinc-900/50 text-zinc-200',
-  'Mind & Body': 'border-white/10 bg-zinc-900/50 text-zinc-200',
-  Dance: 'border-white/10 bg-zinc-900/50 text-zinc-200',
-  Outdoor: 'border-white/10 bg-zinc-900/50 text-zinc-200',
-  'Open Gym': 'border-white/10 bg-zinc-900/50 text-zinc-200',
+const CATEGORY_STYLES: Record<GymClass["category"], string> = {
+  Strength: "border-white/10 bg-zinc-900/50 text-zinc-200",
+  Cardio: "border-white/10 bg-zinc-900/50 text-zinc-200",
+  "Mind & Body": "border-white/10 bg-zinc-900/50 text-zinc-200",
+  Dance: "border-white/10 bg-zinc-900/50 text-zinc-200",
+  Outdoor: "border-white/10 bg-zinc-900/50 text-zinc-200",
+  "Open Gym": "border-white/10 bg-zinc-900/50 text-zinc-200",
 };
 
 const Classes: React.FC = () => {
-  const [query, setQuery] = useState('');
-  const [selectedIntensity, setSelectedIntensity] = useState<
-    Intensity | 'All'
-  >('All');
+  const [query, setQuery] = useState("");
+  const [selectedIntensity, setSelectedIntensity] = useState<Intensity | "All">(
+    "All",
+  );
   const [selectedCategory, setSelectedCategory] = useState<
-    GymClass['category'] | 'All'
-  >('All');
+    GymClass["category"] | "All"
+  >("All");
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
   const categories = useMemo(() => {
@@ -223,9 +223,9 @@ const Classes: React.FC = () => {
         c.title.toLowerCase().includes(q) ||
         c.description.toLowerCase().includes(q);
       const matchesIntensity =
-        selectedIntensity === 'All' || c.intensity === selectedIntensity;
+        selectedIntensity === "All" || c.intensity === selectedIntensity;
       const matchesCategory =
-        selectedCategory === 'All' || c.category === selectedCategory;
+        selectedCategory === "All" || c.category === selectedCategory;
       return matchesQuery && matchesIntensity && matchesCategory;
     });
   }, [query, selectedIntensity, selectedCategory]);
@@ -239,23 +239,23 @@ const Classes: React.FC = () => {
     if (!selectedClass) return;
 
     const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setSelectedId(null);
+      if (e.key === "Escape") setSelectedId(null);
     };
 
-    document.addEventListener('keydown', onKeyDown);
+    document.addEventListener("keydown", onKeyDown);
     const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = "hidden";
 
     return () => {
-      document.removeEventListener('keydown', onKeyDown);
+      document.removeEventListener("keydown", onKeyDown);
       document.body.style.overflow = prevOverflow;
     };
   }, [selectedClass]);
 
   const resetFilters = () => {
-    setQuery('');
-    setSelectedIntensity('All');
-    setSelectedCategory('All');
+    setQuery("");
+    setSelectedIntensity("All");
+    setSelectedCategory("All");
   };
 
   return (
@@ -278,16 +278,19 @@ const Classes: React.FC = () => {
             <h1 className="mt-5 text-4xl sm:text-5xl md:text-6xl font-black tracking-tight">
               Find your next
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">
-                {' '}favorite class
+                {" "}
+                favorite class
               </span>
             </h1>
             <p className="mt-4 text-zinc-400 text-base sm:text-lg">
-              Browse every class we offer—filter by intensity and category, then tap a class to see details.
+              Browse every class we offer—filter by intensity and category, then
+              tap a class to see details.
             </p>
           </div>
 
           <div className="text-sm text-zinc-400">
-            <span className="text-white font-semibold">{filtered.length}</span> class{filtered.length === 1 ? '' : 'es'} found
+            <span className="text-white font-semibold">{filtered.length}</span>{" "}
+            class{filtered.length === 1 ? "" : "es"} found
           </div>
         </div>
 
@@ -305,7 +308,7 @@ const Classes: React.FC = () => {
               {query.length > 0 && (
                 <button
                   type="button"
-                  onClick={() => setQuery('')}
+                  onClick={() => setQuery("")}
                   className="p-1 rounded-lg hover:bg-white/5 text-zinc-400 hover:text-zinc-200"
                   aria-label="Clear search"
                 >
@@ -322,32 +325,37 @@ const Classes: React.FC = () => {
                 Intensity
               </div>
               <div className="flex flex-wrap gap-2">
-                {(['All', 'Low', 'Medium', 'High', 'Extreme'] as const).map((level) => {
-                  const isActive = selectedIntensity === level;
-                  const label = level === 'All' ? 'All' : INTENSITY_STYLES[level].label;
-                  return (
-                    <button
-                      key={level}
-                      type="button"
-                      onClick={() => setSelectedIntensity(level)}
-                      className={`rounded-full border px-3 py-1.5 text-xs font-semibold transition-all ${
-                        isActive
-                          ? level === 'All'
-                            ? 'border-orange-500/30 bg-orange-500/10 text-orange-200'
-                            : INTENSITY_STYLES[level].classes
-                          : 'border-white/10 bg-white/5 text-zinc-300 hover:border-orange-500/30 hover:bg-orange-500/5'
-                      }`}
-                    >
-                      {label}
-                    </button>
-                  );
-                })}
+                {(["All", "Low", "Medium", "High", "Extreme"] as const).map(
+                  (level) => {
+                    const isActive = selectedIntensity === level;
+                    const label =
+                      level === "All" ? "All" : INTENSITY_STYLES[level].label;
+                    return (
+                      <button
+                        key={level}
+                        type="button"
+                        onClick={() => setSelectedIntensity(level)}
+                        className={`rounded-full border px-3 py-1.5 text-xs font-semibold transition-all ${
+                          isActive
+                            ? level === "All"
+                              ? "border-orange-500/30 bg-orange-500/10 text-orange-200"
+                              : INTENSITY_STYLES[level].classes
+                            : "border-white/10 bg-white/5 text-zinc-300 hover:border-orange-500/30 hover:bg-orange-500/5"
+                        }`}
+                      >
+                        {label}
+                      </button>
+                    );
+                  },
+                )}
               </div>
             </div>
 
             <div className="flex-1 rounded-2xl border border-white/10 bg-zinc-900/50 backdrop-blur px-4 py-3">
               <div className="flex items-center justify-between">
-                <div className="text-xs font-bold uppercase tracking-widest text-zinc-400 mb-2">Category</div>
+                <div className="text-xs font-bold uppercase tracking-widest text-zinc-400 mb-2">
+                  Category
+                </div>
                 <button
                   type="button"
                   onClick={resetFilters}
@@ -359,11 +367,11 @@ const Classes: React.FC = () => {
               <div className="flex flex-wrap gap-2">
                 <button
                   type="button"
-                  onClick={() => setSelectedCategory('All')}
+                  onClick={() => setSelectedCategory("All")}
                   className={`rounded-full border px-3 py-1.5 text-xs font-semibold transition-all ${
-                    selectedCategory === 'All'
-                      ? 'border-orange-500/30 bg-orange-500/10 text-orange-200'
-                      : 'border-white/10 bg-white/5 text-zinc-300 hover:border-orange-500/30 hover:bg-orange-500/5'
+                    selectedCategory === "All"
+                      ? "border-orange-500/30 bg-orange-500/10 text-orange-200"
+                      : "border-white/10 bg-white/5 text-zinc-300 hover:border-orange-500/30 hover:bg-orange-500/5"
                   }`}
                 >
                   All
@@ -375,8 +383,8 @@ const Classes: React.FC = () => {
                     onClick={() => setSelectedCategory(cat)}
                     className={`rounded-full border px-3 py-1.5 text-xs font-semibold transition-all ${
                       selectedCategory === cat
-                        ? 'border-orange-500/30 bg-orange-500/10 text-orange-200'
-                        : 'border-white/10 bg-white/5 text-zinc-300 hover:border-orange-500/30 hover:bg-orange-500/5'
+                        ? "border-orange-500/30 bg-orange-500/10 text-orange-200"
+                        : "border-white/10 bg-white/5 text-zinc-300 hover:border-orange-500/30 hover:bg-orange-500/5"
                     }`}
                   >
                     {cat}
@@ -408,11 +416,17 @@ const Classes: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent scale-107" />
 
                   <div className="absolute top-4 left-4 flex items-center gap-2">
-                    <span className={`rounded-full border px-3 py-1 text-xs font-semibold ${CATEGORY_STYLES[c.category]}`}>
+                    <span
+                      className={`rounded-full border px-3 py-1 text-xs font-semibold ${CATEGORY_STYLES[c.category]}`}
+                    >
                       {c.category}
                     </span>
-                    <span className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold ${intensity.classes}`}>
-                      <span className={`h-2 w-2 rounded-full ${intensity.dot}`} />
+                    <span
+                      className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold ${intensity.classes}`}
+                    >
+                      <span
+                        className={`h-2 w-2 rounded-full ${intensity.dot}`}
+                      />
                       {intensity.label}
                     </span>
                   </div>
@@ -449,8 +463,12 @@ const Classes: React.FC = () => {
         {/* Empty */}
         {filtered.length === 0 && (
           <div className="mt-12 rounded-3xl border border-white/10 bg-zinc-900/40 backdrop-blur p-10 text-center">
-            <h3 className="text-xl font-bold text-white">No classes match your filters</h3>
-            <p className="mt-2 text-zinc-400">Try a different keyword, intensity, or category.</p>
+            <h3 className="text-xl font-bold text-white">
+              No classes match your filters
+            </h3>
+            <p className="mt-2 text-zinc-400">
+              Try a different keyword, intensity, or category.
+            </p>
             <div className="mt-6 flex items-center justify-center gap-3">
               <button
                 type="button"
@@ -472,7 +490,9 @@ const Classes: React.FC = () => {
         {/* CTA */}
         <div className="mt-14 rounded-3xl border border-white/10 bg-gradient-to-r from-zinc-900/70 to-zinc-900/40 backdrop-blur p-8 md:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div>
-            <h3 className="text-2xl md:text-3xl font-black tracking-tight">Want a custom plan?</h3>
+            <h3 className="text-2xl md:text-3xl font-black tracking-tight">
+              Want a custom plan?
+            </h3>
             <p className="mt-2 text-zinc-400">
               We also offer private sessions and goal-based programming.
             </p>
@@ -511,7 +531,7 @@ const Classes: React.FC = () => {
             <motion.div
               role="dialog"
               aria-modal="true"
-              className="absolute left-1/2 top-1/2 w-[92vw] max-w-3xl -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-3xl border border-white/10 bg-zinc-950 shadow-2xl"
+              className="absolute left-1/2 top-1/2 w-[92vw] max-w-3xl -translate-x-1/2 -translate-y-1/2 overflow-y-auto max-h-[95vh] rounded-3xl border border-white/10 bg-zinc-950 shadow-2xl"
               initial={{ y: 18, scale: 0.98, opacity: 0 }}
               animate={{ y: 0, scale: 1, opacity: 1 }}
               exit={{ y: 18, scale: 0.98, opacity: 0 }}
@@ -527,7 +547,7 @@ const Classes: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setSelectedId(null)}
-                  className="absolute top-4 right-4 rounded-xl border border-white/10 bg-orange-500/70 backdrop-blur px-2 py-2 text-white hover:border-orange-500/30"
+                  className="absolute cursor-pointer top-4 right-4 rounded-xl border border-white/10 bg-orange-500/70 backdrop-blur px-2 py-2 text-white hover:border-orange-500/30"
                   aria-label="Close"
                 >
                   <X className="h-7 w-7" />
@@ -536,7 +556,9 @@ const Classes: React.FC = () => {
 
               <div className="p-6 sm:p-8">
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className={`rounded-full border px-3 py-1 text-xs font-semibold ${CATEGORY_STYLES[selectedClass.category]}`}>
+                  <span
+                    className={`rounded-full border px-3 py-1 text-xs font-semibold ${CATEGORY_STYLES[selectedClass.category]}`}
+                  >
                     {selectedClass.category}
                   </span>
                   <span
@@ -560,7 +582,7 @@ const Classes: React.FC = () => {
                   {selectedClass.description}
                 </p>
 
-                <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 gap-3">
                   <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
                     <div className="text-xs font-bold uppercase tracking-widest text-zinc-400">
                       Duration
@@ -579,33 +601,37 @@ const Classes: React.FC = () => {
                       {selectedClass.intensity}
                     </div>
                   </div>
-                  <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <div className="rounded-2xl col-span-2 sm:col-span-1 text-center border border-white/10 bg-white/5 p-4">
                     <div className="text-xs font-bold uppercase tracking-widest text-zinc-400">
                       Best for
                     </div>
                     <div className="mt-1 text-white font-semibold">
-                      {selectedClass.category === 'Mind & Body'
-                        ? 'Mobility + balance'
-                        : selectedClass.category === 'Cardio'
-                          ? 'Conditioning'
-                          : selectedClass.category === 'Dance'
-                            ? 'Fun cardio'
-                            : selectedClass.category === 'Outdoor'
-                              ? 'Team energy'
-                              : selectedClass.category === 'Open Gym'
-                                ? 'Strength focus'
-                                : 'Build muscle'}
+                      {selectedClass.category === "Mind & Body"
+                        ? "Mobility + balance"
+                        : selectedClass.category === "Cardio"
+                          ? "Conditioning"
+                          : selectedClass.category === "Dance"
+                            ? "Fun cardio"
+                            : selectedClass.category === "Outdoor"
+                              ? "Team energy"
+                              : selectedClass.category === "Open Gym"
+                                ? "Strength focus"
+                                : "Build muscle"}
                     </div>
                   </div>
                 </div>
 
                 <div className="mt-8 flex flex-col sm:flex-row gap-3">
-                  <button
-                    type="button"
-                    className="rounded-xl bg-white text-black px-6 py-3 font-bold hover:bg-orange-500 hover:text-white transition-all"
+                  <Link to="/contact"
+                    className="rounded-xl text-center bg-white text-black px-6 py-3 font-bold hover:bg-orange-500 hover:text-white transition-all"
                   >
-                    Join this class
-                  </button>
+                    <button
+                      type="button"
+                      className="cursor-pointer"
+                    >
+                      Join this class
+                    </button>
+                  </Link>
                   <Link
                     to="/find-gym"
                     className="rounded-xl border border-white/10 bg-zinc-900/60 backdrop-blur px-6 py-3 font-bold text-white hover:border-orange-500/30 hover:text-orange-200 transition-all text-center"
@@ -614,7 +640,7 @@ const Classes: React.FC = () => {
                     Find a gym
                   </Link>
                   <Link
-                    to="/contact"
+                    to="/faq"
                     className="rounded-xl border border-white/10 bg-zinc-900/60 backdrop-blur px-6 py-3 font-bold text-white hover:border-orange-500/30 hover:text-orange-200 transition-all text-center"
                     onClick={() => setSelectedId(null)}
                   >
