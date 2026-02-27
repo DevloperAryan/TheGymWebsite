@@ -19,7 +19,7 @@ export const Footer: React.FC = () => {
   return (
     <footer className="bg-zinc-950 pt-24 pb-12 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-4 gap-12 mb-16">
+        <div className="grid md:grid-cols-3 gap-12 mb-16">
           <div className="col-span-1 md:col-span-1">
             <div className="flex items-center gap-2 mb-8">
               <div className="leading-none">
@@ -40,35 +40,27 @@ export const Footer: React.FC = () => {
               The premier destination for traditional strength and modern fitness in India. Empowering the warrior within since 2012.
             </p>
           </div>
-
+          <div className='flex md:justify-between justify-evenly'>
           <div>
-            <h4 className="text-white font-bold mb-8 uppercase tracking-widest text-xs">Quick Links</h4>
+            <h4 className="text-white font-bold mb-8 uppercase tracking-widest text-sm">Quick Links</h4>
             <ul className="space-y-4 text-zinc-500">
               <li>
+                <Link to="/classes">
                 <button
                   type="button"
-                  onClick={() => handleScrollNav('programs')}
                   className="hover:text-orange-500 transition-colors"
-                >
+                  >
                   Programs
                 </button>
+                  </Link>
               </li>
               <li>
                 <button
                   type="button"
-                  onClick={() => handleScrollNav('ai-trainer')}
+                  onClick={() => handleScrollNav('home')}
                   className="hover:text-orange-500 transition-colors"
-                >
+                  >
                   AI Coach
-                </button>
-              </li>
-              <li>
-                <button
-                  type="button"
-                  onClick={() => handleScrollNav('trainers')}
-                  className="hover:text-orange-500 transition-colors"
-                >
-                  Trainers
                 </button>
               </li>
               <li>
@@ -76,15 +68,25 @@ export const Footer: React.FC = () => {
                   type="button"
                   onClick={() => handleScrollNav('home')}
                   className="hover:text-orange-500 transition-colors"
-                >
+                  >
+                  Trainers
+                </button>
+              </li>
+              <li>
+                <Link to="/contact">
+                <button
+                  type="button"
+                  className="hover:text-orange-500 transition-colors"
+                  >
                   Membership
                 </button>
+                </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-white font-bold mb-8 uppercase tracking-widest text-xs">Support</h4>
+            <h4 className="text-white font-bold mb-8 uppercase tracking-widest text-sm">Support</h4>
             <ul className="space-y-4 text-zinc-500">
               <li>
                 <Link to="/privacy" className="hover:text-orange-500 transition-colors">Privacy Policy</Link>
@@ -100,10 +102,12 @@ export const Footer: React.FC = () => {
               </li>
             </ul>
           </div>
+          </div>
 
-          <div>
-            <h4 className="text-white font-bold mb-8 uppercase tracking-widest text-xs">Contact</h4>
-            <ul className="space-y-4 text-zinc-500">
+
+          <div >
+            <h4 className="text-white font-bold mb-2 uppercase tracking-widest text-sm text-center md:text-left">Contact</h4>
+            <ul className=" text-zinc-500 flex gap-3 flex-wrap  justify-center md:flex-col">
               <li className="flex items-center gap-3">
                 <MapPin size={18} className="text-orange-500" />
                 <Link to="/find-gym" className='font-akaya font-extrabold text-orange-500/70 hover:text-zinc-300'>Find The Gym</Link>

@@ -183,26 +183,28 @@ const Contact: React.FC = () => {
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
                 <a
                   href="mailto:contact@theindiangym.com"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-white text-black px-6 py-3 font-bold hover:bg-orange-500 hover:text-white transition-all"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl hover:bg-white text-white px-6 py-3 font-bold bg-orange-500 hover:text-black transition-all"
                 >
                   <Mail className="h-5 w-5" />
                   Email Us
                 </a>
+                <div className="flex items-center  gap-2">
                 <a 
                   href="https://www.instagram.com/thegym.in"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-white text-black px-6 py-3 font-bold hover:bg-zinc-300 transition-all"
+                  className="w-[48vw] sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-white text-black px-6 py-3 font-bold hover:bg-zinc-300 transition-all"
                 >
-                  <Instagram className="h-5 w-5 text-[#e312ee]"/>
+                  <Instagram className="h-7 w-7 text-[#e312ee]"/>
                 </a>
                 <a 
                   href="https://www.facebook.co m/search/pages/?q=the%20gym%20health%20planet"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-white text-black px-6 py-3 font-bold hover:bg-zinc-300 transition-all"
+                  className="w-[45vw] sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-white text-black px-6 py-3 font-bold hover:bg-zinc-300 transition-all"
                 >
-                  <Facebook className="h-5 w-5 text-[#0880ff]"/>
+                  <Facebook className="h-7 w-7 text-[#0880ff]"/>
                 </a>
+                </div>
                 <Link
                   to="/find-gym"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-zinc-900/50 backdrop-blur px-6 py-3 font-bold hover:border-orange-500/40 hover:text-orange-300 transition-all"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-white/10 bg-zinc-900/50 backdrop-blur px-6 py-3 font-bold border-zinc-400 hover:border-orange-500 hover:text-orange-300 transition-all"
                 >
                   <MapPin className="h-5 w-5" />
                   Find a Gym

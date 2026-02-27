@@ -137,10 +137,13 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
           </div>
 
           <div className="flex items-center gap-4">
-            <NavLink to={"/contact"} className="hidden sm:flex items-center gap-2 bg-white text-black px-4 py-2 rounded-xl font-bold hover:bg-orange-500 hover:text-white transition-all">
+            <NavLink
+              to="/contact"
+              className="hidden sm:flex items-center gap-2 bg-white text-black px-4 py-2 rounded-xl font-bold hover:bg-orange-500 hover:text-white transition-all"
+            >
               <User className="w-4 h-4" />
               Join Now
-            </NavLink >
+            </NavLink>
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="md:hidden p-2 text-zinc-400 cursor-pointer "
@@ -165,7 +168,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
             }}
             className="flex flex-col gap-8 items-center absolute w-full left-0 justify-between bg-zinc-900/90 backdrop-blur-lg border border-white/10 px-6 py-8 rounded-2xl pointer-events-auto"
           >
-            {navItems.map((item) => (
+            {navItems.map((item) =>
               item.type === "scroll" ? (
                 <button
                   key={item.id}
@@ -193,13 +196,15 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
                 >
                   {item.label}
                 </NavLink>
-              )
-            ))}
+              ),
+            )}
 
-            <button className="sm:hidden flex items-center gap-2 bg-white text-black px-12 py-3 cursor-pointer rounded-xl font-bold hover:bg-orange-500 hover:text-white transition-all">
-              <User className="w-4 h-4" />
-              Join Now
-            </button>
+            <NavLink to="/contact">
+              <button onClick={handleRouteNav} className="sm:hidden flex items-center gap-2 bg-white text-black px-12 py-3 cursor-pointer rounded-xl font-bold hover:bg-orange-500 hover:text-white transition-all">
+                <User className="w-4 h-4" />
+                Join Now
+              </button>
+            </NavLink>
           </motion.div>
         </div>
       )}
