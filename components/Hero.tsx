@@ -3,7 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Play, ArrowRight, Zap } from 'lucide-react';
 import CountUp from 'react-countup';
-import heroImg from '@/assets/MainHeroImg.png'
+import heroImg from '@/assets/MainHeroImg.avif'
 import { Link } from 'react-router-dom';
 
 export const Hero: React.FC = () => {

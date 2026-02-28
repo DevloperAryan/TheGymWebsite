@@ -31,9 +31,9 @@ import YogaImg from "@/assets/photos/yoga.webp";
 import strengthTrainingImg from "@/assets/strengthTraining.avif";
 import zumbaImg from "@/assets/zumba.avif";
 
-import video1 from "@/assets/videos/finalVideo1.mp4"
+import video1 from "@/assets/videos/finalVideo1.mp4";
 
-import floorImg from "@/assets/photos/img2.jpg"
+import floorImg from "@/assets/photos/img2.jpg";
 import { SmartImage } from "@/components/SmartImage";
 
 type AdvantagesProps = {
@@ -55,11 +55,7 @@ const Advantages: React.FC<AdvantagesProps> = ({ withTopPadding = true }) => {
           "Lift, push, pull—on modern machines and free weights built for smooth motion and better form.",
         icon: Dumbbell,
         highlight: "Premium Gear",
-        imageSrcs: [
-          floorImg,
-          gymFitnessImg,
-          circuitTrainingImg,
-        ],
+        imageSrcs: [floorImg, gymFitnessImg, circuitTrainingImg],
       },
       {
         id: 2,
@@ -68,11 +64,7 @@ const Advantages: React.FC<AdvantagesProps> = ({ withTopPadding = true }) => {
           "Certified coaches who track your progress, fix technique, and tailor plans to your goals.",
         icon: Users,
         highlight: "1:1 Coaching",
-        imageSrcs: [
-          gymFitnessImg,
-          cardioFitnessImg,
-          indoorCyclingImg,
-        ],
+        imageSrcs: [gymFitnessImg, cardioFitnessImg, indoorCyclingImg],
       },
       {
         id: 3,
@@ -81,7 +73,7 @@ const Advantages: React.FC<AdvantagesProps> = ({ withTopPadding = true }) => {
           "Train before work, after work, or late night—your routine stays consistent, even when life gets busy.",
         icon: Clock,
         highlight: "Early → Late",
-        imageSrcs: [ MainHeroImg, indoorCyclingImg],
+        imageSrcs: [MainHeroImg, indoorCyclingImg],
       },
       {
         id: 4,
@@ -111,7 +103,7 @@ const Advantages: React.FC<AdvantagesProps> = ({ withTopPadding = true }) => {
         imageSrcs: [PremAmenitie, gymFitnessImg],
       },
     ],
-    []
+    [],
   );
 
   return (
@@ -142,25 +134,27 @@ const Advantages: React.FC<AdvantagesProps> = ({ withTopPadding = true }) => {
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
-              className="max-w-4xl"
+              className="lg:pl-20"
             >
               <div className="inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-950/50 px-4 py-2 text-sm text-zinc-200">
                 <Sparkles className="h-4 w-4 text-red-500" />
                 <span className="font-semibold">Advantages</span>
                 <span className="text-zinc-500">•</span>
-                <span className="text-zinc-400">built for real transformation</span>
+                <span className="text-zinc-400">
+                  built for real transformation
+                </span>
               </div>
 
               <h1 className="mt-6 text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.05]">
                 More than a gym —
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">
-                  a system that makes you consistent.
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800 pb-4 lg:pl-20">
+                  A system that makes you consistent.
                 </span>
               </h1>
 
-              <p className="mt-6 text-zinc-300 text-lg md:text-xl leading-relaxed max-w-2xl">
-                Powerful equipment, expert coaching, recovery-focused amenities, and a community that keeps you
-                showing up.
+              <p className=" text-zinc-300 text-lg md:text-xl leading-relaxed ">
+                Powerful equipment, expert coaching, recovery-focused amenities,
+                and a community that keeps you showing up.
               </p>
 
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
@@ -182,17 +176,23 @@ const Advantages: React.FC<AdvantagesProps> = ({ withTopPadding = true }) => {
                 <div className="rounded-2xl border border-zinc-800 bg-zinc-950/55 p-5">
                   <div className="text-sm text-zinc-400">Hours</div>
                   <div className="mt-1 text-2xl font-bold">5AM – 11PM</div>
-                  <div className="mt-1 text-xs text-zinc-500">7 days a week</div>
+                  <div className="mt-1 text-xs text-zinc-500">
+                    7 days a week
+                  </div>
                 </div>
                 <div className="rounded-2xl border border-zinc-800 bg-zinc-950/55 p-5">
                   <div className="text-sm text-zinc-400">Coaching</div>
                   <div className="mt-1 text-2xl font-bold">Certified</div>
-                  <div className="mt-1 text-xs text-zinc-500">programs + form checks</div>
+                  <div className="mt-1 text-xs text-zinc-500">
+                    programs + form checks
+                  </div>
                 </div>
                 <div className="rounded-2xl border border-zinc-800 bg-zinc-950/55 p-5">
                   <div className="text-sm text-zinc-400">Experience</div>
                   <div className="mt-1 text-2xl font-bold">Premium</div>
-                  <div className="mt-1 text-xs text-zinc-500">clean, modern, motivating</div>
+                  <div className="mt-1 text-xs text-zinc-500">
+                    clean, modern, motivating
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -202,11 +202,16 @@ const Advantages: React.FC<AdvantagesProps> = ({ withTopPadding = true }) => {
         {/* Main Content */}
         <section className="container mx-auto px-4 py-16 md:py-20">
           <div className="text-center max-w-3xl mx-auto mb-14">
-            <h2 className="text-red-500 font-bold tracking-widest uppercase text-sm mb-4">Why Choose Us</h2>
+            <h2 className="text-red-500 font-bold tracking-widest uppercase text-sm mb-4">
+              Why Choose Us
+            </h2>
             <p className="text-zinc-300 text-xl md:text-2xl font-semibold">
-              Every advantage is designed to remove friction and make progress inevitable.
+              Every advantage is designed to remove friction and make progress
+              inevitable.
             </p>
-            <p className="mt-3 text-zinc-500">Train smarter, recover faster, and stay consistent.</p>
+            <p className="mt-3 text-zinc-500">
+              Train smarter, recover faster, and stay consistent.
+            </p>
           </div>
 
           {/* Feature Cards */}
@@ -243,7 +248,9 @@ const Advantages: React.FC<AdvantagesProps> = ({ withTopPadding = true }) => {
                     <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-3">
                       <div className="inline-flex items-center gap-2 rounded-full bg-zinc-950/70 border border-zinc-800 px-3 py-1.5">
                         <Icon className="w-4 h-4 text-red-500" />
-                        <span className="text-sm font-semibold text-zinc-100">{feature.title}</span>
+                        <span className="text-sm font-semibold text-zinc-100">
+                          {feature.title}
+                        </span>
                       </div>
                       <span className="shrink-0 text-xs font-bold px-3 py-1 bg-zinc-950/70 rounded-full text-zinc-300 border border-zinc-800">
                         {feature.highlight}
@@ -253,7 +260,9 @@ const Advantages: React.FC<AdvantagesProps> = ({ withTopPadding = true }) => {
 
                   {/* Body */}
                   <div className="p-6">
-                    <p className="text-zinc-400 leading-relaxed">{feature.description}</p>
+                    <p className="text-zinc-400 leading-relaxed">
+                      {feature.description}
+                    </p>
 
                     <div className="mt-6 flex items-center justify-between">
                       <div className="flex items-center text-xs text-zinc-500 gap-2">
@@ -283,7 +292,8 @@ const Advantages: React.FC<AdvantagesProps> = ({ withTopPadding = true }) => {
                 <h3 className="text-lg font-bold">Pick a goal</h3>
               </div>
               <p className="mt-3 text-zinc-400">
-                Fat loss, strength, muscle, endurance—choose a direction and we’ll shape the plan around you.
+                Fat loss, strength, muscle, endurance—choose a direction and
+                we’ll shape the plan around you.
               </p>
             </div>
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900 p-7">
@@ -294,7 +304,8 @@ const Advantages: React.FC<AdvantagesProps> = ({ withTopPadding = true }) => {
                 <h3 className="text-lg font-bold">Train with structure</h3>
               </div>
               <p className="mt-3 text-zinc-400">
-                Follow smart programming with coaching support so every session moves you forward.
+                Follow smart programming with coaching support so every session
+                moves you forward.
               </p>
             </div>
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900 p-7">
@@ -305,7 +316,8 @@ const Advantages: React.FC<AdvantagesProps> = ({ withTopPadding = true }) => {
                 <h3 className="text-lg font-bold">Recover & repeat</h3>
               </div>
               <p className="mt-3 text-zinc-400">
-                Recovery habits + consistency beat intensity. We make it easy to come back tomorrow.
+                Recovery habits + consistency beat intensity. We make it easy to
+                come back tomorrow.
               </p>
             </div>
           </div>
@@ -315,8 +327,12 @@ const Advantages: React.FC<AdvantagesProps> = ({ withTopPadding = true }) => {
             <div className="p-8 md:p-12">
               <div className="flex items-center justify-between flex-wrap gap-4">
                 <div>
-                  <h2 className="text-2xl md:text-3xl font-bold">Members feel the difference</h2>
-                  <p className="mt-2 text-zinc-400">Better coaching, better vibe, better results.</p>
+                  <h2 className="text-2xl md:text-3xl font-bold">
+                    Members feel the difference
+                  </h2>
+                  <p className="mt-2 text-zinc-400">
+                    Better coaching, better vibe, better results.
+                  </p>
                 </div>
                 <div className="inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-950/50 px-4 py-2 text-sm text-zinc-300">
                   <Sparkles className="h-4 w-4 text-red-500" />
@@ -339,9 +355,16 @@ const Advantages: React.FC<AdvantagesProps> = ({ withTopPadding = true }) => {
                     body: "Everything feels fresh and well-maintained. Recovery amenities are a huge bonus.",
                   },
                 ].map((t) => (
-                  <div key={t.title} className="rounded-2xl border border-zinc-800 bg-zinc-950/40 p-6">
-                    <div className="text-sm font-bold text-zinc-100">{t.title}</div>
-                    <p className="mt-3 text-zinc-400 leading-relaxed">{t.body}</p>
+                  <div
+                    key={t.title}
+                    className="rounded-2xl border border-zinc-800 bg-zinc-950/40 p-6"
+                  >
+                    <div className="text-sm font-bold text-zinc-100">
+                      {t.title}
+                    </div>
+                    <p className="mt-3 text-zinc-400 leading-relaxed">
+                      {t.body}
+                    </p>
                     <div className="mt-5 flex items-center gap-2 text-xs text-zinc-500">
                       <CheckCircle2 className="h-4 w-4 text-green-500" />
                       <span>Verified member feedback</span>
@@ -361,7 +384,8 @@ const Advantages: React.FC<AdvantagesProps> = ({ withTopPadding = true }) => {
                 Ready to <span className="text-red-500">level up</span>?
               </h2>
               <p className="text-zinc-400 mb-8 text-lg">
-                Start with a visit and a plan. We’ll help you pick the right training path.
+                Start with a visit and a plan. We’ll help you pick the right
+                training path.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
