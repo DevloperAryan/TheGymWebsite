@@ -126,6 +126,13 @@ export const Footer: React.FC = () => {
 
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-zinc-500 text-sm">© 2024 The Gym. All rights reserved.</p>
+          <div className='flex items-center gap-2'>
+            <h4 className='text-center text-sm text-zinc-300 font-cursive font-normal'>Developer :</h4> 
+            <a  className='text-center text-orange-500 flex items-center gap-1 font-akaya' href='https://aboutaryan.netlify.app' target='_blank'>
+              <img width={20} src="https://aboutaryan.netlify.app/Assets/WEB%20Picture%20dp.png" alt="" />
+              Aryan
+            </a>            
+          </div>
           <div className="flex gap-6 text-zinc-500 text-sm">
             <a href="#" className="hover:text-white">Instagram</a>
             <a href="#" className="hover:text-white">YouTube</a>
